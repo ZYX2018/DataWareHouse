@@ -1,0 +1,17 @@
+server:
+  port: 6066
+  servlet:
+    context-path: /dwh
+springdoc:
+  version: 1.0
+  swagger-ui:
+    path: /doc.html
+  api-docs:
+    groups:
+      enabled: true
+  group-configs:
+    - group: api
+      pathsToMatch: /api/**
+    - group: openApi
+      pathToMatch: /openApi/**
+      packagesToScan: com.dwh.bi

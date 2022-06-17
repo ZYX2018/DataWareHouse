@@ -21,5 +21,10 @@
             <artifactId>com-dwh-bi-base</artifactId>
             <version>${projectVersion}</version>
         </dependency>
+        <dependency>
+            <groupId>com-dwh-bi</groupId>
+            <artifactId>com-dwh-bi-common</artifactId>
+            <version>${projectVersion}</version>
+        </dependency>
     </dependencies>
 </project>

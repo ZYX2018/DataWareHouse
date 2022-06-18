@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dwh.bi.common.mapper.SystemRegisterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dwh.bi.common.domain.SystemRegister">
+        <result column="ID" property="id" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="CREATE_USER" property="createUser" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="UPDATE_USER" property="updateUser" />
+        <result column="SYSTEM_NAME" property="systemName" />
+        <result column="WORK_PATH" property="workPath" />
+        <result column="LOG_PATH" property="logPath" />
+        <result column="DEPLOY_PATH" property="deployPath" />
+        <result column="SYSTEM_IP" property="systemIp" />
+        <result column="SYSTEM_PORT" property="systemPort" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID,
+        CREATE_TIME,
+        CREATE_USER,
+        UPDATE_TIME,
+        UPDATE_USER,
+        SYSTEM_NAME, WORK_PATH, LOG_PATH, DEPLOY_PATH, SYSTEM_IP, SYSTEM_PORT, REMARK
+    </sql>
+
+</mapper>

@@ -15,5 +15,12 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com-dwh-bi</groupId>
+            <artifactId>com-dwh-bi-base</artifactId>
+            <version>${projectVersion}</version>
+        </dependency>
+    </dependencies>
 
 </project>

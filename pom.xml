@@ -13,6 +13,7 @@
         <module>com-dwh-bi-provider</module>
         <module>com-dwh-bi-base</module>
         <module>com-dwh-bi-common</module>
+        <module>com-dwh-bi-api</module>
     </modules>
 
     <properties>
@@ -25,6 +26,7 @@
         <mysqlDriverVersion>8.0.29</mysqlDriverVersion>
         <mybatisVersion>3.5.2</mybatisVersion>
         <veloCityVersion>2.3</veloCityVersion>
+        <mybatisPlusJoinVersion>1.2.4</mybatisPlusJoinVersion>
     </properties>
 
     <dependencyManagement>
@@ -170,6 +172,12 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
             <version>${veloCityVersion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.yulichang/mybatis-plus-join -->
+        <dependency>
+            <groupId>com.github.yulichang</groupId>
+            <artifactId>mybatis-plus-join</artifactId>
+            <version>${mybatisPlusJoinVersion}</version>
         </dependency>
 
     </dependencies>

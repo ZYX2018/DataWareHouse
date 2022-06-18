@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dwh.bi.common.mapper.FunctionRegisterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dwh.bi.common.domain.FunctionRegister">
+        <result column="ID" property="id" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="CREATE_USER" property="createUser" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="UPDATE_USER" property="updateUser" />
+        <result column="FUNCTION_NAME" property="functionName" />
+        <result column="FUNCTION_CODE" property="functionCode" />
+        <result column="SYSTEM_ID" property="systemId" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID,
+        CREATE_TIME,
+        CREATE_USER,
+        UPDATE_TIME,
+        UPDATE_USER,
+        FUNCTION_NAME, FUNCTION_CODE, SYSTEM_ID, REMARK
+    </sql>
+
+</mapper>

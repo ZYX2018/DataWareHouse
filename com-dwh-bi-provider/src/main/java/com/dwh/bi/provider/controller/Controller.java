@@ -1,12 +1,15 @@
 package com.dwh.bi.provider.controller;
 
 import com.dwh.bi.base.vo.ResultObject;
-import com.dwh.bi.provider.vo.DataSourceVO;
+import com.dwh.bi.common.vo.DataSourceVO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * @author moon
+ */
 @RestController
 @RequestMapping("/api/data-source")
 public class Controller {

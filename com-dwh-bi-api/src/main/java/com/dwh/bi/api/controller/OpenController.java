@@ -1,13 +1,17 @@
-package com.dwh.bi.provider.openapi;
+package com.dwh.bi.api.controller;
 
 import com.dwh.bi.base.vo.ResultObject;
-import com.dwh.bi.provider.vo.DataSourceVO;
+import com.dwh.bi.common.vo.DataSourceVO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * OpenController
+ * @author moon
+ */
 @RestController
 @RequestMapping("/openApi/data-source")
 public class OpenController {

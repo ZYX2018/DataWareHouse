@@ -27,6 +27,8 @@
         <mybatisVersion>3.5.2</mybatisVersion>
         <veloCityVersion>2.3</veloCityVersion>
         <mybatisPlusJoinVersion>1.2.4</mybatisPlusJoinVersion>
+        <fastJsonVersion>2.0.7</fastJsonVersion>
+        <duridVersion>1.2.11</duridVersion>
     </properties>
 
     <dependencyManagement>
@@ -183,7 +185,13 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.11</version>
+            <version>${duridVersion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastJsonVersion}</version>
         </dependency>
 
     </dependencies>

@@ -21,9 +21,9 @@ public class BaseDomain<T> {
     @Schema(description = "主键")
     @TableId(value = "ID", type = IdType.ASSIGN_ID)
     private String id;
-   @Schema(description ="创建时间")
+    @Schema(description ="创建时间")
     @TableField("CREATE_TIME")
-    private LocalDateTime createTime;
+    private LocalDateTime createTime = LocalDateTime.now();
 
    @Schema(description ="创建人")
     @TableField("CREATE_USER")
@@ -31,7 +31,7 @@ public class BaseDomain<T> {
 
    @Schema(description ="更新时间")
     @TableField("UPDATE_TIME")
-    private LocalDateTime updateTime;
+    private LocalDateTime updateTime = LocalDateTime.now();
 
    @Schema(description ="更新人")
     @TableField("UPDATE_USER")

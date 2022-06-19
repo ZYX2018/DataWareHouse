@@ -2,6 +2,7 @@ package com.dwh.bi.common.mapper;
 
 import com.dwh.bi.common.domain.TaskRegister;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.github.yulichang.base.MPJBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -13,6 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2022-06-19
  */
 @Mapper
-public interface TaskRegisterMapper extends BaseMapper<TaskRegister> {
+public interface TaskRegisterMapper extends MPJBaseMapper<TaskRegister> {
 
 }

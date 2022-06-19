@@ -27,6 +27,11 @@
             <artifactId>com-dwh-bi-provider</artifactId>
             <version>${projectVersion}</version>
         </dependency>
+        <dependency>
+            <groupId>com-dwh-bi</groupId>
+            <artifactId>com-dwh-bi-api</artifactId>
+            <version>${projectVersion}</version>
+        </dependency>
     </dependencies>
 
 </project>

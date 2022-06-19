@@ -1,5 +1,7 @@
 package com.dwh.bi.provider.controller;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dwh.bi.base.params.RequestObject;
 import com.dwh.bi.base.vo.ResultObject;
@@ -7,6 +9,7 @@ import com.dwh.bi.base.vo.ResultObject;
 import com.dwh.bi.common.domain.DataSourceRegister;
 import com.dwh.bi.common.params.DataSourcePageParam;
 import com.dwh.bi.common.service.impl.DataSourceRegisterServiceImpl;
+import com.dwh.bi.common.vo.DataSourceRegisterVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -42,8 +45,8 @@ public class DataSourceRegisterController {
     @Parameters(@Parameter(name = "param" ,description = "数据源",content = {@Content(mediaType = "application/json",schema = @Schema(implementation = RequestObject.class))}))
     @ApiResponses(@ApiResponse(responseCode = "200",description = "成功",content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ResultObject.class))} ))
     @PostMapping("saveOrUpdate")
-    ResultObject<Boolean> saveOrUpdate(@Valid @RequestBody RequestObject<DataSourceRegister> param){
-        return ResultObject.success(dataSourceRegisterService.saveOrUpdate(param.getParams()));
+    ResultObject<Boolean> saveOrUpdate(@Valid @RequestBody RequestObject<DataSourceRegisterVO> param){
+        return ResultObject.success(dataSourceRegisterService.saveOrUpdate(BeanUtil.copyProperties(param.getParams(),DataSourceRegister.class)));
     }
 
     @Operation(description = "删除一个数据源",summary = "removeDataSourceById")
@@ -58,7 +61,7 @@ public class DataSourceRegisterController {
     @Parameters(@Parameter(name = "param",description = "数据分页查询参数",content = {@Content(mediaType = "application/json",schema = @Schema(implementation = RequestObject.class))}))
     @ApiResponses(@ApiResponse(responseCode = "200",description = "成功",content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ResultObject.class))} ))
     @PostMapping("page")
-    ResultObject<Page<DataSourceRegister>> getDataSourcePage(@Valid @RequestBody RequestObject<DataSourcePageParam> param){
-        return ResultObject.success(dataSourceRegisterService.lambdaQuery().like(DataSourceRegister::getSourceIp,param.getParams().getIp()).like(DataSourceRegister::getSourceName,param.getParams().getDataSourceName()).page(new Page<>(param.getParams().getPage(),param.getParams().getPageSize())) );
+    ResultObject<IPage<DataSourceRegister>> getDataSourcePage(@Valid @RequestBody RequestObject<DataSourcePageParam> param){
+        return ResultObject.success(dataSourceRegisterService.page(param.getParams()));
     }
 }

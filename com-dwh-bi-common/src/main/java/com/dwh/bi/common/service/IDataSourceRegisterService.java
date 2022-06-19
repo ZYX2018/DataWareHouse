@@ -1,7 +1,10 @@
 package com.dwh.bi.common.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.dwh.bi.common.domain.DataSourceRegister;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.dwh.bi.common.params.DataSourcePageParam;
+import com.dwh.bi.common.vo.DataSourceRegisterVO;
+import com.github.yulichang.base.MPJBaseService;
 
 /**
  * <p>
@@ -11,6 +14,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author zhangyx-v
  * @since 2022-06-19
  */
-public interface IDataSourceRegisterService extends IService<DataSourceRegister> {
+public interface IDataSourceRegisterService extends MPJBaseService<DataSourceRegister> {
+    /**
+     *分页查询
+     * @param pageParamParam pageParamParam
+     * @return DataSourceRegisterVO
+     */
+    IPage<DataSourceRegisterVO> page(DataSourcePageParam pageParamParam);
 
 }

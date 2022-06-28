@@ -7,10 +7,7 @@ import com.dwh.bi.common.service.impl.DsDataTaskExecuteServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author moon
@@ -23,15 +20,15 @@ public class DsDataExecuteTaskController {
 
    private final   DsDataTaskExecuteServiceImpl dsDataTaskExecuteService;
 
+
+
     public DsDataExecuteTaskController(DsDataTaskExecuteServiceImpl dsDataTaskExecuteService) {
         this.dsDataTaskExecuteService = dsDataTaskExecuteService;
     }
 
     @Operation(description = "page",summary = "根据表名分页查询")
-    @PostMapping("/list")
+    @PostMapping("/page")
     public ResultObject page(@RequestBody DsDataTaskExecuteParam executeParam){
             return ResultObject.success(dsDataTaskExecuteService.getBaseMapper().page(new Page<>(executeParam.getPage(),executeParam.getPageSize()),executeParam));
     }
-
-
 }

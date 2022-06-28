@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 public class BaseDomain<T> {
     @Schema(description = "主键")
     @TableId(value = "ID", type = IdType.ASSIGN_ID)
-    private String id;
+    private Long id;
     @Schema(description ="创建时间")
     @TableField("CREATE_TIME")
     private LocalDateTime createTime = LocalDateTime.now();

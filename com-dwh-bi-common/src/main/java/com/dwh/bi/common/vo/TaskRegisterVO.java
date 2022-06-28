@@ -21,8 +21,14 @@ public class TaskRegisterVO extends BaseVO {
     @Schema(description="任务编码")
     private String taskCode;
 
-    @Schema(description="服务名")
+    @Schema(description="系统主键")
+    private String systemId;
+
+    @Schema(description="系统名称")
     private String systemName;
+
+    @Schema(description="功能主键")
+    private String functionId;
 
     @Schema(description="功能名")
     private String functionName;

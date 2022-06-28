@@ -15,6 +15,7 @@
         <result column="SOURCE_PORT" property="sourcePort" />
         <result column="USER_NAME" property="userName" />
         <result column="USER_PASSWORD" property="userPassword" />
+        <result column="INFORMATION_ID" property="informationId" />
         <result column="REMARK" property="remark" />
     </resultMap>
 
@@ -25,7 +26,7 @@
         CREATE_USER,
         UPDATE_TIME,
         UPDATE_USER,
-        SOURCE_NAME, SOURCE_TYPE, SOURCE_IP, SOURCE_PORT, USER_NAME, USER_PASSWORD, REMARK
+        SOURCE_NAME, SOURCE_TYPE, SOURCE_IP, SOURCE_PORT, USER_NAME, USER_PASSWORD, INFORMATION_ID, REMARK
     </sql>
 
 </mapper>

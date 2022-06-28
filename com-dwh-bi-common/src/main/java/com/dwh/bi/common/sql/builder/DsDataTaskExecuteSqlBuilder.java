@@ -10,7 +10,7 @@ import org.apache.ibatis.jdbc.SQL;
  */
 public class DsDataTaskExecuteSqlBuilder {
 
-    public String pageSql(DsDataTaskExecuteParam param){
+    public String pageSql(Page page, DsDataTaskExecuteParam param){
         return new SQL(){
             {
                 SELECT("*").FROM(param.getTableName()).OFFSET(param.getPage()-1).LIMIT(param.getPageSize());

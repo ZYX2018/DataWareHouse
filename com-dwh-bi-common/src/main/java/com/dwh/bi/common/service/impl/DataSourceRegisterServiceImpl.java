@@ -26,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.List;
 import java.util.Objects;
@@ -44,12 +45,12 @@ import java.util.Set;
 public class DataSourceRegisterServiceImpl extends MPJBaseServiceImpl<DataSourceRegisterMapper, DataSourceRegister> implements IDataSourceRegisterService {
 
     private final DataSourceRegisterMapper dataSourceRegisterMapper;
-    private final DynamicRoutingDataSource dynamicRoutingDataSource;
-    private final DefaultDataSourceCreator dataSourceCreator;
-    public DataSourceRegisterServiceImpl(DataSourceRegisterMapper dataSourceRegisterMapper, DynamicRoutingDataSource dynamicRoutingDataSource, DefaultDataSourceCreator dataSourceCreator) {
+    @Resource
+    private  DynamicRoutingDataSource dynamicRoutingDataSource;
+    @Resource
+    private  DefaultDataSourceCreator dataSourceCreator;
+    public DataSourceRegisterServiceImpl(DataSourceRegisterMapper dataSourceRegisterMapper) {
         this.dataSourceRegisterMapper = dataSourceRegisterMapper;
-        this.dynamicRoutingDataSource = dynamicRoutingDataSource;
-        this.dataSourceCreator = dataSourceCreator;
     }
 
     @PostConstruct

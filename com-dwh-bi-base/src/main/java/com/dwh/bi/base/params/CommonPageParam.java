@@ -11,7 +11,7 @@ import lombok.Data;
 @Schema(description = "分页查询基础参数")
 public class CommonPageParam {
     @Schema(description = "页码")
-    private int page;
+    private int page = 1;
     @Schema(description = "页尺寸")
-    private int pageSize;
+    private int pageSize = 10;
 }

@@ -35,7 +35,7 @@ public class TaskRegisterServiceImpl extends MPJBaseServiceImpl<TaskRegisterMapp
     @Override
     public IPage<TaskRegisterVO> selectPageTaskRegister(TaskPageParam pageParam) {
         MPJLambdaWrapper<TaskRegisterVO> wrapper = new MPJLambdaWrapper<TaskRegisterVO>().selectAll(TaskRegister.class).selectAs(SystemRegister::getSystemName,TaskRegisterVO::getSystemName).selectAs(FunctionRegister::getFunctionName,TaskRegisterVO::getFunctionName)
-                .selectAs(DataSourceRegister::getSourceName,TaskRegisterVO::getSourceName).selectAs(DataSourceRegister::getId,TaskRegisterVO::getSourceId).leftJoin(SystemRegister.class,SystemRegister::getId,TaskRegister::getSystemId)
+                .selectAs(DataSourceRegister::getSourceName,TaskRegisterVO::getSourceName).selectAs(DataSourceRegister::getId,TaskRegisterVO::getSourceId).selectAs(TaskRegister::getId,TaskRegisterVO::getTaskId).leftJoin(SystemRegister.class,SystemRegister::getId,TaskRegister::getSystemId)
                 .leftJoin(FunctionRegister.class,FunctionRegister::getId,TaskRegister::getFunctionId).leftJoin(DataSourceRegister.class,DataSourceRegister::getId,TaskRegister::getSourceId);
         if (StringUtils.isNotEmpty(pageParam.getSourceTable())) {
             wrapper = wrapper.like(TaskRegister::getSourceTable,pageParam.getSourceTable());

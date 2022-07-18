@@ -29,6 +29,7 @@
         <mybatisPlusJoinVersion>1.2.4</mybatisPlusJoinVersion>
         <fastJsonVersion>2.0.7</fastJsonVersion>
         <duridVersion>1.2.11</duridVersion>
+        <okhttp-version>5.0.0-alpha.10</okhttp-version>
     </properties>
 
     <dependencyManagement>

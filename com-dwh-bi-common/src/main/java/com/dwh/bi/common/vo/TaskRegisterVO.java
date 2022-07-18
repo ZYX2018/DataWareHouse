@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Schema(name = "注册任务VO" ,description = "注册任务VO")
 public class TaskRegisterVO extends BaseVO {
 
+    private String taskId;
 
     @Schema(description="任务名称")
     private String taskName;
